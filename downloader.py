@@ -15,22 +15,19 @@ def complete_func():
 
 try:
     yt = YouTube(video_link,
-                 on_progress_callback=progress_func,
-                 on_complete_callback=complete_func)
+                #  on_progress_callback=progress_func,
+                #  on_complete_callback=complete_func
+                 )
 except:
     print('Connection Error')
     
-mp4_files = yt.streams.filter(file_extension='mp4')
-
-yt.title(file_name)
-
-d_video = yt.get(mp4_files[-1].extension,mp4_files[-1].resolution)
+video = yt.streams.filter(file_extension='mp4').get_highest_resolution()
 
 try: 
     # downloading the video 
-    d_video.download(STORE_PATH) 
-except: 
-    print("There was an error downloading the video!") 
+    video.download(STORE_PATH, f'{file_name}.mp4') 
+except Exception as e: 
+    print("There was an error downloading the video!", e) 
 print('Download completed successfully!') 
 
 
