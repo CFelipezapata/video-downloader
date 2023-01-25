@@ -1,8 +1,11 @@
 import sys
+import os
+from dotenv import load_dotenv
 from pytube import YouTube
 
+load_dotenv()
 
-STORE_PATH = '/mnt/c/Users/CFZ/Videos/misc/'
+STORE_PATH = os.getenv('VIDEO_STORE_PATH')
 video_link = sys.argv[1]
 file_name = sys.argv[2]
 
