@@ -7,18 +7,17 @@ load_dotenv()
 
 STORE_PATH = os.getenv('VIDEO_STORE_PATH')
 
-# TODO: Complete functions for progress and completion to display a progress bar...
-def progress_func():
-    pass
-
-def complete_func():
-    pass
+def progress_func(stream, bytes, bytes_remaining):
+    total = stream.filesize
+    downloaded = total - bytes_remaining
+    completed = int(downloaded / total * 100)
+    end = '\r' if completed < 100 else '\n'
+    print(f"Downloading... [{'#' * completed}{'.' * (100 - completed)}] {completed}%", end=end)
 
 def download_video(video_link: str, file_name: str) -> None:
     try:
         yt = YouTube(video_link,
-                    #  on_progress_callback=progress_func,
-                    #  on_complete_callback=complete_func
+                     on_progress_callback=progress_func,
                     )
     except:
         print('Connection Error')
