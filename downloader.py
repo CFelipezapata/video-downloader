@@ -29,9 +29,11 @@ def download(audio: bool, source: str, file_name: str) -> None:
         
     try:
         if audio:
+            print('Downloading Audio only...')
             media = yt.streams.get_audio_only()
             media.download(AUDIO_STORE_PATH, f'{file_name}.mp3')
         else:
+            print('Downloading Video content...')
             media = yt.streams.filter(file_extension='mp4').get_highest_resolution()
             media.download(VIDEO_STORE_PATH, f'{file_name}.mp4') 
     except Exception as e:
