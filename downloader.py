@@ -10,7 +10,7 @@ VIDEO_STORE_PATH = os.getenv('VIDEO_STORE_PATH')
 AUDIO_STORE_PATH = os.getenv('AUDIO_STORE_PATH')
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-a", "--audio", help="Download audio only", action="store_true")
+parser.add_argument("-a", "--audio_only", help="Download audio only", action="store_true")
 parser.add_argument("source", help="Youtube URL of the video to download")
 parser.add_argument("file_name", help="Final filename in local system")
 
@@ -43,7 +43,7 @@ def download(audio: bool, source: str, file_name: str) -> None:
 
 def main() -> None:
     args = parser.parse_args()
-    download(args.audio, args.source, args.file_name)
+    download(args.audio_only, args.source, args.file_name)
 
 if __name__ == '__main__':
     main()
