@@ -21,7 +21,7 @@ def progress_func(stream, bytes, bytes_remaining):
     end = '\r' if completed < 100 else '\n'
     print(f"Downloading... [{'#' * completed}{'.' * (100 - completed)}] {completed}%", end=end)
 
-def download(audio, source, file_name):
+def download(audio: bool, source: str, file_name: str) -> None:
     try:
         yt = YouTube(source, on_progress_callback=progress_func)
     except:
