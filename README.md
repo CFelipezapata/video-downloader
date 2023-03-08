@@ -5,7 +5,7 @@ For personal use, feel free to make changes as you wish.
 create a `.env` file in the project root and add the download locations:
 ```shell
 VIDEO_STORE_PATH=<path/to/your/videos/destination>
-AUDIO_STORE_PATH=<<path/to/your/audio/destination>>
+AUDIO_STORE_PATH=<path/to/your/audio/destination>
 ```
 ### Install for local use
 
