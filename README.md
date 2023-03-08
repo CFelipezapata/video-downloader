@@ -10,7 +10,7 @@ AUDIO_STORE_PATH=<<path/to/your/audio/destination>>
 ### Install for local use
 
 ```shell
-python -m pip install -e
+python -m pip install -e .
 ```
 ## Usage
 ### Download a Youtube video as `.mp4`
