@@ -1,4 +1,3 @@
-import sys
 import os
 import argparse
 from dotenv import load_dotenv
