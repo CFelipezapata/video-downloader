@@ -1,6 +1,12 @@
 # Youtube Video Downloader
 For personal use, feel free to make changes as you wish.
 
+## Warning
+You may get a known error from pytube saying
+`AttributeError: 'NoneType' object has no attribute 'span'`
+
+A workaround is listed in [This discussion](https://github.com/pytube/pytube/issues/1498#issuecomment-1472963944)
+
 ## Setup
 create a `.env` file in the project root and add the download locations:
 ```shell
